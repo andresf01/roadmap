@@ -63,7 +63,7 @@ module DMPRoadmap
     # Enable shibboleth as an alternative authentication method
     # Requires server configuration and omniauth shibboleth provider configuration
     # See config/initializers/devise.rb
-    config.shibboleth_enabled = true
+    config.shibboleth_enabled = false
 
     # Relative path to Shibboleth SSO Logout
     config.shibboleth_login = '/Shibboleth.sso/Login'
@@ -93,5 +93,13 @@ module DMPRoadmap
 
     # The percentage of answered questions needed to enable the plan visibility section of the Share plan page
     config.default_plan_percentage_answered = 50
+
+    # Enable shibboleth as an alternative authentication method
+    # Requires server configuration and omniauth shibboleth provider configuration
+    # See config/initializers/devise.rb
+    config.orcid_enabled = true
+
+    # Enable listen console for vagrant
+    config.web_console.whitelisted_ips = ['45.5.184.2','172.18.0.0/12']
   end
 end

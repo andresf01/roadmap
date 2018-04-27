@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   #   :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable, :omniauthable,
-         :omniauth_providers => [:shibboleth, :orcid]
+         :omniauth_providers => [:shibboleth, :orcid, :ldap]
 
 
   ##

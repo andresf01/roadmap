@@ -37,6 +37,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           sign_in_and_redirect user, event: :authentication
         elsif scheme.name == 'orcid'
           sign_in_and_redirect user, event: :authentication
+        elsif scheme.name == 'ldap'
+          sign_in_and_redirect user, event: :authentication
         else
           flash[:notice] = _('Successfully signed in')
           redirect_to new_user_registration_url

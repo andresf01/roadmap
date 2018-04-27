@@ -27,6 +27,14 @@ class SessionsController < Devise::SessionsController
         end
         existing_user.update_attributes(orcid_id: session['devise.orcid_data'][:uid])
       end
+      if !session['devise.ldap_data'].nil?
+        if u = UserIdentifier.create(identifier_scheme: IdentifierScheme.find_by(name: 'ldap'),
+                                 identifier: session['devise.ldap_data']['uid'],
+                                 user: existing_user)
+          success = _('Your account has been successfully linked to your LDAP account. You will now be able to sign in with them.')
+        end
+        existing_user.update_attributes(orcid_id: session['devise.ldap_data'][:uid])
+      end
       session[:locale] = existing_user.get_locale unless existing_user.get_locale.nil?
       set_gettext_locale  #Method defined at controllers/application_controller.rb
     end

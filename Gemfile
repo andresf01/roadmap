@@ -39,6 +39,7 @@ gem 'devise_invitable', '~> 1.7.0'
 gem 'omniauth', '~> 1.3.2'
 gem 'omniauth-shibboleth', '~> 1.2.1'
 gem 'omniauth-orcid', '~> 2.0'
+gem 'omniauth-ldap'
 gem 'ruby_dig'  # for omniauth-orcid
 
 #rolify for roles

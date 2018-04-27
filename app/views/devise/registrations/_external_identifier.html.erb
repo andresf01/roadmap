@@ -15,6 +15,15 @@
                     Rails.application.routes.url_helpers.send("user_shibboleth_omniauth_authorize_path"),
                     title: _("Link your institutional credentials to access your account with them."),
                     'data-toggle': "tooltip" %>
+    <% elsif scheme.name.downcase == 'ldap' %>
+        <%= link_to  Rails.application.routes.url_helpers.send("user_ldap_omniauth_authorize_path"),
+                        id: "connect-ldap-button", target: '_blank',
+                        title: _("LDAP connection"),
+                        'data-toggle': "tooltip" do %>
+            <%= image_tag 'http://ciat.cgiar.org/wp-content/uploads/ciat-icon-48.png', alt: _('CIAT logo') %>
+            &nbsp;
+            <%= _("Create or connect your ORCID iD") %>
+        <% end %>
     <% end %>
 <% else %>
     <% if scheme.name.downcase == 'orcid' %>

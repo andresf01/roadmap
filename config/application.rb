@@ -93,8 +93,8 @@ module DMPRoadmap
     # The percentage of answered questions needed to enable the plan visibility section of the Share plan page
     config.default_plan_percentage_answered = 50
 
-    # Enable shibboleth as an alternative authentication method
-    # Requires server configuration and omniauth shibboleth provider configuration
+    # Enable orcid as an alternative authentication method
+    # Requires server configuration and omniauth orcid provider configuration
     # See config/initializers/devise.rb
     config.orcid_enabled = true
 
